@@ -15,7 +15,7 @@ class App extends React.Component {
         <Header />
         <Router>
           <LaunchRouter />
-          <Launches />
+
         </Router>
 
       </div>

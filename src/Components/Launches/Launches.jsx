@@ -30,17 +30,25 @@ export class Launches extends React.Component {
     }
 
     addLaunch = (obj) => {
-        return (
-            <Link to="/getLaunchDtls/{obj.flight_number}">
+
+        const launchlist = launches.map((obj, index) => {
+            const image = obj.links.flickr_images.length != 0 ? obj.links.flickr_images
+                : 'https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg';
+
+            return <Link to={"/getLaunchDtls/" + obj.flight_number}>
                 <Launch
-                    banner={obj.links.flickr_images.length != 0 ? obj.links.flickr_images : 'https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg'}
+                    key={"launch_" + index}
+                    banner={image}
                     missionName={obj.mission_name}
                     launchDate={obj.launch_date_local}
                     description={obj.details}
                 />
             </Link>
+        })
 
-        )
+        return launchlist;
+
+
     }
     render() {
         const launches = this.state.launches;
@@ -48,9 +56,7 @@ export class Launches extends React.Component {
         return (
             <div className="launches">
                 {
-                    launches.map((obj, index) => {
-                        return this.addLaunch(obj);
-                    })
+                    this.addLaunch()
                 }
                 {/* <Launch
                     banner="https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg"
