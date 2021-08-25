@@ -1,11 +1,13 @@
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { LaunchDetails } from "../LaunchDetails/LaunchDetails";
 import { Launches } from "../Launches/Launches";
 function LaunchRouter() {
     return (
         <div className="launch__router">
-            <Route path="/" component={Launches} />
-            <Route path="/getLaunchDtls/:flight_number" component={LaunchDetails} />
+            <Switch>
+                <Route path="/getLaunchDtls/:flight_number" component={LaunchDetails} />
+                <Route path="/" component={Launches} />
+            </Switch>
         </div>
     )
 }

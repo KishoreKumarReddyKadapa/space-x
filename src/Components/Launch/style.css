@@ -9,10 +9,16 @@
     overflow: hidden;
 }
 
-.launch .launch-info {flex-basis: 70%;margin-left: 10px;}
+.launch .launch-info {
+    flex-basis: 70%;margin-left: 10px;
+}
 .launch .launch_date{
     float: right;
     font-size: 12px;
+    
+}
+.launch h2{
+    color: cadetblue;
 }
 .launch img {
     width: 26%;
