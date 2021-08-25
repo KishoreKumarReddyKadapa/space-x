@@ -1,0 +1,27 @@
+.launch {
+    width: 65%;
+    margin: 15px auto;
+    display: flex;
+    flex-flow: wrap;
+    height: 145px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 45%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.launch .launch-info {flex-basis: 70%;margin-left: 10px;}
+.launch .launch_date{
+    float: right;
+    font-size: 12px;
+}
+.launch img {
+    width: 26%;
+    height: 100%;
+}
+
+p.description {
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
